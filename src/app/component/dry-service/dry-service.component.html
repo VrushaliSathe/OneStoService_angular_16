@@ -1,0 +1,292 @@
+<div class="container">
+  <div class="row">
+    <!-- Service
+      report -->
+    <div class="col-9 align-self-center">
+      <h4 class="page-title">Service Report</h4>
+      <div class="d-flex align-items-center">
+        <nav aria-label="breadcrumb" class="d-flex align-items-center">
+          <li class="m-2">
+            <a href="/dashboard">Dashboard</a>
+          </li>
+          <!----><!----><!---->
+          <li class="breadcrumb-item active ng-star-inserted">
+            Service Reports
+          </li>
+          <!----><!---->
+        </nav>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="m-3">
+        <button class="btn btn-primary ms-auto">
+          <i class="bi bi-download"></i> PDF
+        </button>
+      </div>
+    </div>
+    <div class="col-xl-12 col-md-12 col-12 mb-md-0 mb-4">
+      <div class="card invoice-preview-card">
+        <hr class="my-0" />
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <a href="/" class="navbar-brand"
+                ><b class="logo-icon"
+                  ><h3>All {{taskListAmc[1].employee.name}} Task  with Customer {{taskListAmc[0].customer.name}} </h3></b
+                ><span class="logo-text"> </span
+              ></a>
+              <br />
+              <span class="badge bg-light-info text-info font-medium px-3"
+                >Service Task Report</span
+              >
+            </div>
+          </div>
+        </div>
+        <hr class="my-0" />
+        <div class="table-responsive" >
+          <table class="table border-top m-0">
+            <thead >
+              <tr>
+                <th>Sr.No</th>
+                <th>Check List For PM/AMC</th>
+                <th>UOM</th>
+                <th>Unit No-1</th>
+                <th>Unit No-2</th>
+                <th>Unit No-3</th>
+                <th>Unit No-4</th>
+                <th>Remark</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr >
+                <td>1</td>
+                <td>
+                  Check Condensor Coils And Check Cleaning Of Condensor With Air Blower JetPump Service
+
+                </td>
+                <td>{{taskListAmc[0].uomNumber}}</td>
+                <td><i class="text-success"> {{taskListAmc[0].CheckCondensorCoilsAndCheckCleaningOfCondensorWithAirBlowerJetPumpService}}</i></td>
+                <!-- <td *ngIf="taskListAmc[0][0].CheckCondensorCoilsAndCheckCleaningOfCondensorWithAirBlowerJetPumpService == true"><span class="text-success">true</span></td> -->
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>24°C</td>
+                <td><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  Check Motor Termination And Loose Contact And OverHeat
+                </td>
+                <td>-</td>
+                <td>{{taskListAmc[0].CheckMotorTerminationAndLooseContactAndOverHeat}}</td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>24°C</td>
+                <td><i class="text-success"> </i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  Checking Cable For Over Heating And Termination For Tightness
+                </td>
+                <td>-</td>
+                <td>{{taskListAmc[0].CheckingCableForOverHeatingAndTerminationForTightness}} </td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>24</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>
+                  CheckingOfODUFanMotorCurrent
+                </td>
+                <td>-</td>
+                <td>{{taskListAmc[0].CheckingOfODUFanMotorCurrent}}</td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>10</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>
+                  Compressor And Refrigerant Pipeling
+                </td>
+                <td>03483809-343889</td>
+                <td>{{taskListAmc[0].CompressorAndRefrigerantPipeling}}
+                </td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>24°C</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>
+                  clean Air Filters And Check Air Filters Condition
+                </td>
+                <td>-</td>
+                <td>{{taskListAmc[0].cleanAirFiltersAndCheckAirFiltersCondition}}</td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>24°C</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>
+                  cleaning Of Drain Tray And Check For Water Drain Properly Condensation Water
+                </td>
+                <td>-</td>
+                <td>{{taskListAmc[0].cleaningOfDrainTrayAndCheckForWaterDrainProperlyCondensationWater}}</td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>24</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>
+                  Check Condensor Coils AndC heckCleaning Of Condensor With Air Blower JetPumpService
+                </td>
+                <td>-</td>
+                <td>{{taskListAmc[1].CheckCondensorCoilsAndCheckCleaningOfCondensorWithAirBlowerJetPumpService}}</td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>10</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>
+                  Checking Of ODU FanMotor Current
+                </td>
+                <td>-</td>
+                <td>{{taskListAmc[1].CheckingOfODUFanMotorCurrent}}</td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>10</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>
+                  clean Air Filters And CheckAir Filters Condition
+                </td>
+                <td>-</td>
+                <td>{{taskListAmc[1].cleanAirFiltersAndCheckAirFiltersCondition}}</td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>10</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>
+                  cleaning Of Drain Tray And Check For Water Drain Properly Condensation Water
+                </td>
+                <td>-</td>
+                <td>{{taskListAmc[1].cleaningOfDrainTrayAndCheckForWaterDrainProperlyCondensationWater}}</td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>10</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>
+                Remark
+                </td>
+                <td>-</td>
+                <td>{{taskListAmc[0].Remarks}}</td>
+                <td>2tk</td>
+                <td>o.k</td>
+                <td>10</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+              <th>
+                <span class="app-brand-text demo text-body fw-bold"
+                  >Referigerant Parameter</span
+                >
+                <hr class="m-0"/>
+              </th>
+              </tr>
+              <tr *ngIf="taskListAmc1">
+                <td>1</td>
+                <td>Ambient Tempareture</td>
+                <td>{{taskListAmc1.UomNumber}}</td>
+                <td class="text-nowrap text-danger">{{taskListAmc1.AmbidientTemp}}° C</td>
+                <td class="text-nowrap text-danger">22 °C</td>
+                <td class="text-nowrap text-danger">22 °C</td>
+                <td class="text-nowrap text-danger">24°C</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Room tempareture</td>
+                <td>C</td>
+                <td class="text-nowrap text-warning">{{taskListAmc1.RoomTemp}}° C</td>
+                <td class="text-nowrap text-warning">23 °C</td>
+                <td class="text-nowrap text-warning">23 °C</td>
+                <td class="text-nowrap text-warning">22 °C</td>
+
+                <td ><i class="bi bi-check text-success"></i></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Gril Tempareture</td>
+                <td>C</td>
+                <td>{{taskListAmc1.GrillTemp}}° C</td>
+                <td>9.5</td>
+                <td>9</td>
+                <td>10</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Discharge & Pressure</td>
+                <td class="text-nowrap">{{taskListAmc1.DischargePressure}}</td>
+                <td class="text-nowrap">180</td>
+                <td>180</td>
+                <td>180</td>
+                <td>200</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td class="text-nowrap">Suction Pressure</td>
+                <td class="text-nowrap">{{taskListAmc1.SuctionPressure}}</td>
+                <td class="text-nowrap">70</td>
+                <td>65</td>
+                <td>70</td>
+                <td>55</td>
+                <td ><i class="bi bi-check text-success"></i></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td class="text-nowrap">Remarks</td>
+                <td class="text-nowrap">{{taskListAmc1.Remarks}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr class="my-0" />
+        </div>
+      </div>
+      <!-- /Invoice -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,258 @@
+<div class="row fv-plugins-icon-container">
+  <router-outlet></router-outlet>
+
+  <div class="col-8 align-self-center">
+    <h4 class="page-title">Profile Details</h4>
+    <div class="d-flex align-items-center">
+      <nav aria-label="breadcrumb" class="d-flex align-items-center">
+        <li class="m-2">
+          <a href="/dashboard">Dashboard</a>
+        </li>
+        <!----><!----><!---->
+        <li class="breadcrumb-item active ng-star-inserted">Profile Details </li>
+        <!----><!---->
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <form>
+            <div class="text-center">
+              <div class="user-profile pb-4">
+                <div class="profile-img">
+                  <img src="assets/images/users/user4.jpg" alt="user" />
+                </div>
+                <div
+                  ngbdropdown=""
+                  display="static"
+                  class="profile-text dropdown"
+                >
+                  <a
+                    href="javascript: void(0);"
+                    class="dropdown-toggle link u-dropdown"
+                    aria-expanded="false"
+                  ></a>
+                </div>
+              </div>
+              <!-- <img src="assets\images\users\user2.jpg" alt=""> -->
+            </div>
+            <br />
+            <div class="row">
+              <div class="mb-3 row">
+                <label for="name" class="col-sm-4 col-form-label">Name :</label>
+                <div class="form-group col-sm-8">
+                  <input type="text" name="name"[(ngModel)]="editAdmin.name + editAdmin.lastName" class="form-control" />
+
+                  <!---->
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="email" class="col-sm-4 col-form-label"
+                  >email :</label
+                >
+                <div class="form-group col-sm-8">
+                  <input type="text" name="email" class="form-control" [(ngModel)]="editAdmin.email" />
+                  <!---->
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="name" class="col-sm-4 col-form-label"
+                  >contactNumber</label
+                >
+                <div class="form-group col-sm-8">
+                  <input
+                    type="text"
+                    class="form-control ng-untouched ng-pristine ng-valid"
+                    id="name"
+                    value="867564678"
+                    style="border: none"
+                  />
+                  <!---->
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8 profile">
+      <form [formGroup]="profileForm" class="ng-pristine">
+        <ul
+          ngbNav
+          #nav="ngbNav"
+          [(activeId)]="active"
+          [destroyOnHide]="false"
+          class="nav-tabs"
+        >
+          <li [ngbNavItem]="1" [destroyOnHide]="true">
+            <button ngbNavLink>Peofile Details</button>
+            <ng-template ngbNavContent class="card" flag=false>
+              <ngb-alert
+                [dismissible]="false"
+                class="d-block mt-3"
+                type="success"
+              >
+                This tab content DOM will de destroyed when not active
+              </ngb-alert>
+
+              <div class="form-group mb-3 fv-plugins-icon-container">
+                <label for="firstName" class="form-label">First Name*</label>
+                <input type="text" class="form-control"  [(ngModel)]="editAdmin.firstName" name="firstName" formControlName="firstName" />
+                <div
+                  class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"
+                ></div>
+              </div>
+              <div class="form-group mb-3 fv-plugins-icon-container">
+                <label for="lastName" class="form-label">Last Name*</label>
+                <input class="form-control" type="text" [(ngModel)]="editAdmin.lastName" name="lastName" formControlName="lastName" />
+                <div
+                  class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"
+                ></div>
+              </div>
+              <div class="form-group mb-3">
+                <label for="email" class="form-label">E-mail*</label>
+                <input type="email" class="form-control" [(ngModel)]="editAdmin.email" name="email"  formControlName="email"/>
+              </div>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="2">
+            <button ngbNavLink>Password Change</button>
+            <ng-template ngbNavContent *ngIf="flag==true">
+              <ngb-alert
+                [dismissible]="false"
+                class="d-block mt-3"
+                type="success"
+              >
+                This tab content DOM will always stay in DOM
+              </ngb-alert>
+              <!-- <div class="form-group"> -->
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group input-group-merge">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    [(ngModel)]="password"
+                    placeholder="Password"
+                    formControlName="password" >
+
+                  <span class="input-group-text cursor-pointer"
+                    ><i class="bi bi-eye"></i
+                  ></span>
+                  <div *ngIf="submitted && f.password.errors" class="text-danger">
+                    <div *ngIf="f.password.errors.required">password is required</div>
+                </div>
+                </div>
+
+              <!-- </div> -->
+              <!-- <div class="form-group"> -->
+                <label for="password" class="form-label">Old Password</label>
+                <div class="input-group input-group-merge">
+                  <input
+                  type="password"
+                  class="form-control"
+                  name="oldPassword"
+                  placeholder="OldPassword"
+                  formControlName="oldPassword">
+                  <span class="input-group-text cursor-pointer"
+                    ><i class="bi bi-eye"></i
+                  ></span>
+                  <div *ngIf="submitted && f.oldPassword.errors" class="text-danger">
+                    <div *ngIf="f.oldPassword.errors.required">oldPassword is required</div>
+                </div>
+                </div>
+              <!-- </div> -->
+              <!-- <div class="form-group"> -->
+                <label for="password" class="form-label"
+                  >Confirm New Password
+                </label>
+                <div class="input-group input-group-merge">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="ConfirmPassword"
+                    formControlName="confirmPassword"/>
+                  <span class="input-group-text cursor-pointer"
+                    ><i class="bi bi-eye"></i
+                  ></span>
+                  <div *ngIf="submitted && f.confirmPassword.errors" class="text-danger">
+                    <div *ngIf="f.confirmPassword.errors.required">confirmPassword is required</div>
+                </div>
+                <!-- </div> -->
+              </div>
+
+            </ng-template>
+          </li>
+
+        </ul>
+
+      </form>
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    <br>
+      <button class="btn btn-success me-2" (click)="updateAdmin(profileForm)">
+        Save changes
+      </button>
+      <button class="btn btn-primary me-2" (click)="profileForm.reset()">
+       Reset
+      </button>
+      <!-- <pre>Active: {{ active }}</pre> -->
+    </div>
+
+  </div>
+  <!-- <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <h3>Change Password</h3>
+          <div class="form-group mb-3 col-md-4">
+            <label for="password" class="form-label">Old Password </label>
+            <div class="input-group input-group-merge">
+              <input
+                type="password"
+                id="oldPassword"
+                class="form-control"
+                name="oldPassword"
+              />
+              <span class="input-group-text cursor-pointer"
+                ><i class="bi bi-eye"></i
+              ></span>
+            </div>
+          </div>
+          <div class="form-group mb-3 col-md-4">
+            <div class="input-group input-group-merge">
+              <span class="input-group-text cursor-pointer"
+                ><i class="bi bi-eye"></i
+              ></span>
+            </div>
+          </div>
+          <div class="form-group mb-3 col-md-4">
+            <label class="form-label" for="confirmpassword"
+              >Confirm Password</label
+            >
+            <div class="input-group input-group-merge">
+              <input
+                type="password"
+                id="confirmPassword"
+                class="form-control"
+                name="confirmPassword"
+              />
+              <span class="input-group-text cursor-pointer"
+                ><i class="bi bi-eye"></i
+              ></span>
+            </div>
+          </div>
+          <div class="mt-2">
+            <button type="submit" class="btn btn-success me-2">
+              Save Password
+            </button>
+            <button type="reset" class="btn btn-label-secondary">Cancel</button>
+          </div>
+          <input type="hidden" />
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

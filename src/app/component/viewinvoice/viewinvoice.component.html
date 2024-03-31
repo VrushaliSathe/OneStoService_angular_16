@@ -1,0 +1,172 @@
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+  <h4 class="page-title">View Invoice</h4>
+  <div class="card">
+    <div  class="container-fluid">
+      <router-outlet ></router-outlet
+      >
+        <div  class="card">
+          <div  class="p-3">
+            <div
+              class="d-md-flex align-items-center"
+            >
+              <div  class="btn-group">
+                <a
+                  (click)="back()"
+                  class="btn btn-default bg-white text-info d-flex align-items-center shadow-sm me-2"
+                  ><i
+                    class="mdi mdi-chevron-left fs-6 me-1"
+                  ></i
+                  ><span >Back</span></a
+                >
+              </div>
+            <div class="ms-auto mt-3 mt-md-0">
+                  <a href="/" class="navbar-brand"
+                    ><b class="logo-icon"
+                      ><img
+                        src="assets\images\logos\logo-icon.png"
+                        alt="homepage"
+                        class="dark-logo"
+                      />Classic Engineers</b
+                    ><span class="logo-text"> </span
+                  ></a>
+                  <br />
+                  <span class="badge bg-light-info text-info font-medium px-5"
+                    >Invoice</span
+                  >
+
+              </div>
+              <div  class="ms-auto mt-3 mt-md-0">
+                <h4  class="mb-0">
+                  Invoice Id : #101
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div  class="card-body">
+            <div  class="row">
+              <div  class="col-md-6 text-start">
+                <h5 >Order Status:</h5>
+                <span
+
+                  class="badge bg-info font-medium px-3"
+                  >Shipped</span
+                >
+              </div>
+              <div
+
+                class="col-md-6 text-end text-right"
+              >
+                <h5  class="mt-2">Order Date:</h5>
+                <span
+                  ><i
+
+                    class="mdi mdi-calendar me-1 text-dark fs-5"
+                  ></i>
+                  Tuesday, August 29, 2023
+                </span>
+              </div>
+            </div>
+            <hr  />
+            <div  class="row">
+              <div  class="col-md-6 text-start">
+                <h5 >Bill From:</h5>
+                <span >Pineapple Inc.</span
+                ><span  class="d-block"
+                  >first@xabz.com</span
+                ><span  class="d-block"
+                  >Ganesh glory,Godrej garden city,Ahmedabad.</span
+                ><span  class="d-block"
+                  >979796786</span
+                >
+              </div>
+              <div  class="col-md-6 text-end">
+                <h5 >Bill To:</h5>
+                <span  class="d-block"
+                  >Redq Inc.</span
+                ><span  class="d-block">
+                  toFirst@agth.com </span
+                ><span  class="d-block">
+                  Godrej garden city,Ahmedabad. </span
+                ><span  class="d-block"
+                  >757575233</span
+                >
+              </div>
+            </div>
+            <hr class="m-0"/>
+            <div  class="col-md-12 text-end">
+              <h5 >Service Report </h5>
+              <span  class="d-block"
+                >Report Date: &nbsp;&nbsp; 23-4/2023</span
+              ><span  class="d-block">
+                Report Number: &nbsp; &nbsp;#978970 </span
+              >
+            </div>
+            <div  class="mt-4">
+              <div  class="table-responsive">
+                <table
+
+                  class="table table-bordered table-hover no-wrap align-middle"
+                >
+                  <thead >
+                    <tr >
+                      <th  class="border-bottom-0">
+                        Item Name
+                      </th>
+                      <th
+
+                        class="border-bottom-0 text-center"
+                      >
+                        Unit Price
+                      </th>
+                      <th
+
+                        class="border-bottom-0 text-center"
+                      >
+                        Unit
+                      </th>
+                      <th
+
+                        class="border-bottom-0 text-info text-center"
+                      >
+                        Total Price
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody >
+                    <tr >
+                      <td >Courge</td>
+                      <td  class="text-center">
+                        10
+                      </td>
+                      <td  class="text-center">
+                        9
+                      </td>
+                      <td  class="text-center">
+                        90
+                      </td>
+                    </tr>
+                  </tbody>
+                  <!---->
+                </table>
+              </div>
+            </div>
+            <div  class="text-end mt-4">
+              <h5 >
+                <span >Subtotal amount: ₹ </span> 90
+              </h5>
+              <h5 >
+                <span >Vat: ₹ </span>9
+              </h5>
+              <hr  />
+              <h3 >
+                <span  class="fw-bold me-2"
+                  >Total:</span
+                >₹ 99
+              </h3>
+            </div>
+          </div>
+        </div><!---->
+    </div>
+  </div>
+</div>

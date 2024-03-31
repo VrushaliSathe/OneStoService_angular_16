@@ -1,0 +1,184 @@
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+  <div class="col-8 align-self-center">
+    <h4 class="page-title">Task Details</h4>
+    <div class="d-flex align-items-center">
+      <nav aria-label="breadcrumb" class="d-flex align-items-center">
+        <li class="m-2">
+          <a href="/dashboard">Dashboard</a>
+        </li>
+        <!----><!----><!---->
+        <li class="breadcrumb-item active ng-star-inserted">Task Details</li>
+        <!----><!---->
+      </nav>
+    </div>
+  </div>
+  <div class="d-md-flex align-items-center mt-2 bg-white p-3">
+    <div>
+      <h3 class="mb-0">All Tasks Suyash Employee AMC Service</h3>
+    </div>
+    <!-- <div class="ms-auto">
+      <button type="button" class="btn btn-cyan text-white">Add Task</button
+      ><button type="button" class="btn btn-dark ms-3">Add Section</button>
+    </div> -->
+  </div>
+  <!-- <div
+    class="d-md-flex align-items-center justify-content-between border-top border-bottom bg-white p-2"
+  >
+    <a
+      href="javascript:void(0)"
+      class="d-flex align-items-center p-2 rounded-pill bg-light"
+      ><span class="badge bg-danger badge-pill px-3 fw-bold fs-3">9</span>
+      <h5 class="mb-0 ms-1 text-dark">Incomplete Task(s)</h5></a
+    ><a
+      href="javascript:void(0)"
+      class="d-flex align-items-center p-2 rounded-pill bg-light mt-3 mt-md-0"
+      ><span class="badge bg-success badge-pill px-3 fw-bold fs-3">5</span>
+      <h5 class="mb-0 ms-1 text-dark">Complete Task(s)</h5></a
+    ><a
+      href="javascript:void(0)"
+      class="d-flex align-items-center p-2 rounded-pill bg-light mt-3 mt-md-0"
+      ><span class="badge bg-info badge-pill px-3 fw-bold fs-3">14</span>
+      <h5 class="mb-0 ms-1 text-dark">Total Task(s)</h5></a
+    >
+  </div> -->
+
+
+  <div class="col-lg-12">
+    <!-- ==================================-->
+    <!-- ======== Outline Alert ========= -->
+    <!-- ==================================-->
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-body">
+          <div
+            class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0"
+          >
+            <!-- <div class="offset-1 col-md-8">
+              <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+            </div> -->
+            <!-- <div class="col-md-6">
+              <mat-form-field class="example-container">
+                <mat-label>Select an Customer Name</mat-label>
+                <mat-select [(value)]="selected">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1" (click)="periodWise()"
+                    >Raju</mat-option
+                  >
+                  <mat-option value="option2" (click)="periodWise()"
+                    >Mohan</mat-option
+                  >
+                  <mat-option value="option3" (click)="periodWise()"
+                    >Mitali</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div> -->
+            <!-- <div class="col-md-4">
+              <mat-form-field class="example-container">
+                <mat-label>Select an option</mat-label>
+                <mat-select [(value)]="selected2">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1" (click)="periodWise()"
+                    >AMC</mat-option
+                  >
+                  <mat-option value="option2" (click)="periodWise()"
+                    >DO & Change</mat-option
+                  >
+                  <mat-option value="option3" (click)="periodWise()"
+                    >Installation & Commistion</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div> -->
+
+          </div>
+          <div class="d-flex mb-3 mt-3">
+            <input
+                  type="text"
+                  placeholder="Search by Customer Name"
+                  class="form-control w-25 ng-pristine ng-valid ng-touched"
+                />
+            <!-- <button class="btn btn-primary ms-auto">Add User</button> -->
+          </div>
+          <div class="table-responsive table-bordered">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col" class="text-center">#</th>
+                  <th scope="col">Customer Name</th>
+                  <th scope="col">Mobile</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let customer of customers; let i=index">
+                  <td class="text-center">{{i+1}}</td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <div class="ms-3">
+                        <p class="font-medium mb-0">{{customer.name}}</p>
+                        <small><span class="badge bg-danger">Indoor</span> </small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>{{customer.mobile}}</td>
+                  <td>
+                    <a (click)="getCustomerId(customer._id)"
+                      ><i class="bi bi-eye"></i
+                    ></a>
+                    &nbsp;
+                    <i
+                      class="bi bi-trash text-danger text-danger"
+                      (click)="open(content)"
+                    ></i>
+                  </td>
+                </tr>
+                <!---->
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-center">
+            <ngb-pagination
+              [collectionSize]="70"
+              [(page)]="page"
+              aria-label="Default pagination"
+            ></ngb-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label for="dateOfBirth">You Want To Delete This</label>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">cancel</button>
+
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Delete</button>
+  </div>
+</ng-template>
+

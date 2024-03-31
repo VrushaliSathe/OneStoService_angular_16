@@ -1,0 +1,315 @@
+
+
+<div *ngIf="showmsg">
+  <h1 class="">smdls;lkd;ld;</h1>
+  <p *ngFor="let alert of alerts" >
+    <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+  </p>
+  <p>
+    <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+  </p>
+</div>
+<div class="col-9 align-self-center">
+  <h4 class="page-title">Employee List</h4>
+  <div class="d-flex align-items-center">
+    <nav aria-label="breadcrumb" class="d-flex align-items-center">
+      <li class="m-2">
+        <a href="/dashboard">Dashboard</a>
+      </li>
+      <!----><!----><!---->
+      <li class="breadcrumb-item active ng-star-inserted">Employee List</li>
+      <!----><!---->
+    </nav>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="card card-body">
+      <h4 class="card-title">Employee Table</h4>
+      <h5 class="card-subtitle">Here is the Employee list create Employee</h5>
+      <!--  -->
+      <div class="d-flex mb-3 mt-3">
+        <input
+          type="text"
+          placeholder="Search by Id or Name "
+          class="form-control w-25 ng-untouched ng-pristine ng-valid"
+        /><button
+          class="btn btn-primary ms-auto"
+          (click)="openLgmodel(contentlg)"
+        >
+          Add Employee
+        </button>
+
+      </div>
+      <div class="table-responsive table-bordered">
+        <table class="table mb-0 no-wrap align-middle">
+          <thead>
+            <tr>
+              <th scope="col" class="text-center">#Id</th>
+              <th scope="col">Employee Name</th>
+              <th scope="col">Password</th>
+              <!-- <th  scope="col">Email</th> -->
+              <th scope="col">Mobile</th>
+              <!-- <th  scope="col">Date of Joining</th> -->
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let empList of employeList; let i = index"
+              [attr.id]="empList.id"
+            >
+              <td class="text-center">{{ empList.employeeId }}</td>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <p class="font-medium mb-0">{{ empList.name }}</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <i class="badge bg-light-success">{{ empList.password }}</i>
+              </td>
+              <td>{{ empList.mobile }}</td>
+              <td>
+                <a
+                  class="bi bi-pencil text-success"
+                  [attr.id]="empList._id"
+                  (click)="onEditModel(editemploye)"
+                >
+                  <!-- <a (click)="onEditEmploye()">edit</a> -->
+                  <!-- (click)="openLgmodel(contentlg)"  onEditClick(empList._id)"--> </a
+                >&nbsp;
+                <i
+                  class="bi bi-trash text-danger"
+                  (click)="onDelete(empList._id)"
+                ></i>
+              </td>
+            </tr>
+            <!---->
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <div class="d-flex justify-content-center">
+        <ngb-pagination
+          [collectionSize]="70"
+          [(page)]="page"
+          aria-label="Default pagination"
+        ></ngb-pagination>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-basic-title">Delete Model</h3>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label for="dateOfBirth">You Want To Delete This</label>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.close('Save click')"
+    >
+      cancel
+    </button>
+
+    <button type="button" class="btn btn-outline-dark">Delete</button>
+  </div>
+</ng-template>
+
+<ng-template #contentlg let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-basic-title">Add Employee</h3>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form
+      [formGroup]="employeeForm"
+      (ngSubmit)="onSubmit()"
+      class="ng-pristine ng-invalid ng-touched"
+    >
+      <div class="mb-3 row">
+        <label for="name" class="col-sm-4 col-form-label">Employee Id:</label>
+        <div class="col-sm-8">
+          <input
+            type="number"
+            formControlName="employeeId"
+            id="employeeId"
+            class="form-control "
+          />
+          <div *ngIf="submitted && f.employeeId.errors" class="text-danger">
+            <div *ngIf="f.employeeId.errors.required">employeeId is required</div>
+        </div><!---->
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="name" class="col-sm-4 col-form-label"
+          >Employee Name :</label
+        >
+        <div class="col-sm-8">
+          <input
+            type="text"
+            formControlName="name"
+            id="name"
+            class="form-control ng-untouched ng-pristine ng-valid"
+          /><div *ngIf="submitted && f.name.errors" class="text-danger">
+            <div *ngIf="f.name.errors.required">name is required</div>
+        </div><!---->
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="mobile" class="col-sm-4 col-form-label">Mobile :</label>
+        <div class="col-sm-8">
+          <input
+            type="text"
+            formControlName="mobile"
+            id="mobile"
+            class="form-control ng-untouched ng-pristine ng-valid"
+          /><div *ngIf="submitted && f.mobile.errors" class="text-danger">
+            <div *ngIf="f.mobile.errors.required">mobile is required</div>
+        </div><!---->
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="doj" class="col-sm-4 col-form-label">Password :</label>
+        <div class="col-sm-8">
+          <input
+            type="password"
+            formControlName="password"
+            id="password"
+            class="form-control ng-untouched ng-pristine ng-valid"
+          />
+          <div *ngIf="submitted && f.password.errors" class="text-danger">
+            <div *ngIf="f.password.errors.required">password is required</div>
+        </div>
+        </div>
+      </div>
+
+      <!-- <div class="mb-3 row">
+        <label for="projects" class="col-sm-4 col-form-label"
+          >User Image :</label
+        >
+        <div class="col-sm-8">
+          <input
+            type="file"
+            formControlName="image"
+            id="image"
+            class="form-control ng-pristine "
+          />
+        </div>
+      </div> -->
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="modal.close('Save click')"
+        >
+          Close</button
+        ><button
+          class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #editemploye let-modal>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-basic-title">edit Employee</h3>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form class="ng-pristine" (ngSubmit)="onEditEmploye()">
+      <div class="mb-3 row">
+        <label for="name" class="col-sm-4 col-form-label">Employee Id:</label>
+        <div class="form-group col-sm-8">
+          <input
+            type="text"
+            name="employeeId"
+            class="form-control"
+            [(ngModel)]="editoneemploye.employeeId"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="name" class="col-sm-4 col-form-label"
+          >Employee Name :</label
+        >
+        <div class="form-group col-sm-8">
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            [(ngModel)]="editoneemploye.name"
+          />
+          <!-- <div *ngIf="submitted && f.name.errors" class="text-danger">
+            <div *ngIf="f.name.errors.required">name is required</div>
+        </div> -->
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="mobile" class="col-sm-4 col-form-label">Mobile :</label>
+        <div class="form-group col-sm-8">
+          <input
+            type="text"
+            name="mobile"
+            class="form-control"
+            [(ngModel)]="editoneemploye.mobile"
+          />
+          <!-- <div *ngIf="submitted && f.mobile.errors" class="text-danger">
+            <div *ngIf="f.mobile.errors.required">mobile is required</div>
+        </div> -->
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="password" class="col-sm-4 col-form-label">Password :</label>
+        <div class="form-group col-sm-8">
+          <input
+            type="text"
+            name="password"
+            class="form-control"
+            [(ngModel)]="editoneemploye.password"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="modal.close('Save click')"
+        >
+          Close</button
+        ><button type="submit" class="btn btn-primary">Update</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

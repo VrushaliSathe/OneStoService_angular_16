@@ -1,0 +1,102 @@
+<div class="authentication-wrapper authentication-cover">
+    <div class="authentication-inner row m-0">
+      <!-- /Left Text -->
+      <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
+        <div class="w-100 d-flex justify-content-center">
+          <img
+            src="\assets\images\logos\girl-doing-yoga-light.png"
+            class="img-fluid"
+            alt="Login image"
+            width="600"
+            data-app-dark-img="illustrations/boy-with-laptop-dark.png"
+            data-app-light-img="illustrations/boy-with-laptop-light.png"
+          />
+        </div>
+      </div>
+      <!-- /Left Text -->
+
+      <!-- Reset Password -->
+      <div
+        class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-4 p-sm-5"
+      >
+        <div class="w-px-400 mx-auto">
+          <!-- Logo -->
+
+          <!-- /Logo -->
+
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="pt-4 pb-2">
+                <h4 class="mb-3 p-3">Reset Password 🔒</h4>
+                <p class="mb-4">
+                  for <span class="fw-medium">john.doe@email.com</span>
+                </p>
+              </div>
+              <form [formGroup]="retrivePassword" (ngSubmit)="onSubmit()">
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    formControlName="password"
+                    [ngClass]="{
+                      'is-invalid': submitted && f.password.errors
+                    }"
+                    id="inputPassword4"
+                  />
+                  <div
+                    *ngIf="submitted && f.password.errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f.password.errors.required">
+                      Password is required
+                    </div>
+                  </div>
+                  <label for="floatingPassword">New Password</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    formControlName="confirmpassword"
+                    [ngClass]="{
+                      'is-invalid': submitted && f.confirmpassword.errors
+                    }"
+                    id="inputPassword4"
+                  />
+                  <div
+                    *ngIf="submitted && f.confirmpassword.errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f.confirmpassword.errors.required">
+                      Password is required
+                    </div>
+                    <div *ngIf="f['confirmpassword'].errors['matching']">
+                      Confirm Password does not match
+                    </div>
+                  </div>
+                  <label for="floatingPassword">Confirm Password</label>
+                </div>
+
+                <div class="d-grid">
+                  <button
+                    class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2"
+                    type="submit"
+                  >
+                    Set New Password
+                  </button>
+                  <div class="text-center">
+                    <a class="small" routerLink="/">Back To Login</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Reset Password -->
+    </div>
+  </div>

@@ -1,0 +1,106 @@
+
+.profile{
+background-color: white;
+}
+.user-profile {
+    text-align: center;
+    position: relative
+}
+
+.user-profile .profile-img {
+    width: 70px;
+    margin: 0 auto;
+    border-radius: 100%
+}
+
+.user-profile .profile-img:before {
+    animation: 2.5s blow 0s linear infinite;
+    position: absolute;
+    content: "";
+    width: 70px;
+    height: 70px;
+    top: 0;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 0
+}
+
+@keyframes blow {
+    0% {
+        box-shadow: 0 0 #0000001a;
+        opacity: 1;
+        transform: scaleZ(.5)
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px #0000001a;
+        opacity: 1;
+        transform: scaleZ(.5)
+    }
+
+    to {
+        box-shadow: 0 0 0 20px #0000001a;
+        opacity: 0;
+        transform: scaleZ(.5)
+    }
+}
+
+.user-profile .profile-img img {
+    width: 100%;
+    border-radius: 100%
+}
+
+.user-profile .profile-text {
+    padding: 5px 0;
+    position: relative
+}
+
+.user-profile .profile-text a {
+    color: #fff;
+    opacity: .6
+}
+
+.user-profile .dropdown-menu {
+    left: 0;
+    right: 0;
+    width: 180px;
+    margin: 0 auto
+}
+
+.hide-menu {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 35px
+}
+
+.user-profile {
+    border-bottom: 1px solid rgba(0,0,0,.1)
+}
+
+.user-profile .dropdown-menu .dropdown-item {
+    color: #54667a
+}
+
+.customizer {
+    background: #fff;
+    position: fixed;
+    height: 100%;
+    width: 280px;
+    top: 0;
+    right: -280px;
+    z-index: 100;
+    box-shadow: 1px 0 20px #00000014;
+    transition: .3s ease-in
+}
+
+.customizer .service-panel-toggle {
+    background: #f62d51;
+    padding: 12px 20px;
+    color: #fff;
+    position: absolute;
+    top: 30%;
+    left: -54px
+}
+
+

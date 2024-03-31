@@ -1,0 +1,25 @@
+.max-width {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.left-sidebar{
+  position: fixed;
+  overflow-x: inherit;
+}
+
+.topbar .top-navbar .navbar-header .navbar-brand {
+ position: fixed;
+ overflow-y: scroll;
+}
+.navbar-header{
+  position: fixed;
+}
+// .top-navbar{
+//   position: fixed;
+// }
+.top-navbar{
+  box-shadow: 1px 0px 20px rgb(167 150 150);
+  transition: 0.2s ease-in;
+}
+

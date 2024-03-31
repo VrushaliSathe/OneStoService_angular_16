@@ -1,0 +1,45 @@
+
+
+<div class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+    <div class="container">
+      <div class="row ">
+        <div class="col-lg-6 col-md-3 d-flex flex-column align-items-left justify-content-left">
+            <img src="assets\images\logos\girl-doing-yoga-light.png" alt="">
+        </div>
+        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center">
+          <div class="d-flex justify-content-center py-4">
+            <a href="index.html" class="logo d-flex align-items-center w-auto">
+              <img src="\assets\images\logos\aclogo.png" alt="" style="height: 56px;">
+              <span class="app-brand-text demo text-body fw-bold m-2">AC Service</span>
+            </a>
+          </div>
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="pt-4 pb-2">
+                <h5 class="card-title text-center pb-0 fs-4">Verifiy It`s You</h5>
+                <p class="text-center small">Enter your OTP to create account</p>
+              </div>
+              <form >
+                <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:5}"></ng-otp-input>
+                <div class="d-grid m-5">
+                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2"  routerLink="/" >Next</button>
+                  <div class="text-center">
+                    <a class="small" routerLink="/">Back to Login</a>
+                  </div>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+<!-- End #main -->
+

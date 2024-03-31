@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+  <h4 class="page-title">Terms And Conditions</h4>
+  <div class="d-flex align-items-center">
+    <nav aria-label="breadcrumb" class="d-flex align-items-center">
+      <li class="m-2">
+        <a href="/dashboard">Dashboard</a>
+      </li>
+      <!----><!----><!---->
+      <li class="breadcrumb-item active ng-star-inserted">
+        Terms And Conditions
+      </li>
+      <!----><!---->
+    </nav>
+  </div>
+  <div class="card mb-0">
+    <div class="card-body">
+      <div class="container">
+        <header>Add Terms And Condition</header>
+        <angular-editor
+          [(ngModel)]="htmlContent"
+          [config]="editorConfig"
+        ></angular-editor>
+      </div>
+      <br />
+
+      <div class="text-center">
+        <button class="btn btn-success">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

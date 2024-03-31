@@ -1,0 +1,160 @@
+.ng-pristine{
+    border-color: #39c449;
+}
+.example-container {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+
+
+
+
+.file-upload .image-box,
+.file-upload .file-box {
+    display: flex;
+    justify-content: center;
+    padding: 14px;
+    height: 130px;
+    width: 100%;
+    background: #efefef59;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 10%);
+}
+
+.file-upload .image-box:hover,
+.file-upload .file-box:hover {
+    content: "SElect";
+    background: #0a050552;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 12%);
+}
+
+.file-upload .image-box img {
+    height: 100%;
+    display: block;
+}
+
+.file-upload .image-box img:hover {
+    height: 100%;
+    display: block;
+    opacity: 0.7;
+}
+
+.file-upload .image-box p {
+    position: relative;
+    top: 45%;
+    color: #fff;
+}
+
+
+
+
+.file-upload {
+  background-color: #ffffff;
+
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}

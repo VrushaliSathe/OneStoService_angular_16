@@ -1,0 +1,224 @@
+<div  class="container-fluid">
+    <router-outlet ></router-outlet
+    >
+    <h4 class="page-title">Invoice List </h4>
+    <div class="d-flex align-items-center">
+      <nav
+        aria-label="breadcrumb"
+        class="d-flex align-items-center"
+      >
+        <li class="m-2">
+          <a href="/dashboard">Dashboard</a>
+        </li>
+        <!----><!----><!---->
+        <li class="breadcrumb-item active ng-star-inserted">Invoice List </li>
+        <!----><!---->
+      </nav>
+    </div>
+    <div class="card mb-0">
+        <div class="card-body">
+
+          <div class="d-md-flex align-items-center">
+            <div class="form-group mb-0">
+              <input
+                type="text"
+                placeholder="Search Invoice"
+                class="form-control ng-valid ng-dirty ng-touched"
+              />
+            </div>
+            <!-- <div class="ms-auto mt-4 mt-md-0">
+              <a
+                routerlink="/apps/addinvoice"
+                href="/apps/addinvoice"
+                ><button
+                  type="button"
+                  class="btn btn-info"
+                >
+                  <i class="me-2 mdi mdi-plus"></i>
+                  Add Invoice
+                </button></a
+              >
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="card pt-3">
+        <div class="table-responsive">
+          <table
+
+            class="table table-borderless table-hover align-middle no-wrap"
+          >
+            <thead>
+              <tr class="border-bottom">
+                <th scope="col">
+                  <input
+                    type="checkbox"
+                    name="list_name"
+                    value="h1"
+                    class="ng-untouched ng-pristine ng-valid"
+                  />
+                </th>
+                <th scope="col">Id</th>
+                <th scope="col">Bill From</th>
+                <th scope="col">Bill To</th>
+                <th scope="col">Total Cost</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-bottom">
+                <td class="py-4">
+                  <input
+
+                    type="checkbox"
+                    name="list_name"
+                    value="101"
+                    class="ng-untouched ng-pristine ng-valid"
+                  />
+                </td>
+                <td class="py-4">101</td>
+                <td class="py-4">
+                    Pineapple Inc.
+                </td>
+                <td class="py-4">
+                 Redq Inc.
+                </td>
+                <td class="py-4">
+                 99
+                </td>
+                <td class="py-4">
+                  <span
+
+                    class="badge bg-info px-3 font-medium"
+                    >Shipped</span
+                  ><!----><!----><!---->
+                </td>
+                <td> <a class="text-info" routerLink="/component/viewinvoice"><i class="bi-eye"></i></a>&nbsp;&nbsp;
+                    <a class="text-danger" (click)="open(content)"><i class="bi-trash"></i></a></td>
+
+              </tr>
+              <tr class="border-bottom">
+                <td class="py-4">
+                  <input
+                    type="checkbox"
+                    name="list_name"
+                    value="102"
+                    class="ng-untouched ng-pristine ng-valid"
+                  />
+                </td>
+                <td class="py-4">102</td>
+                <td class="py-4">
+                 Pineapple.
+                </td>
+                <td class="py-4">
+                 ME Inc.
+                </td>
+                <td class="py-4">
+                 99
+                </td>
+                <td class="py-4">
+                  <!----><!----><span
+
+                    class="badge bg-success px-3 font-medium"
+                    >Delivered</span
+                  ><!---->
+                </td>
+                <td> <a class="text-info" routerLink="/component/viewinvoice"><i class="bi-eye"></i></a>&nbsp;&nbsp;
+                    <a class="text-danger" (click)="open(content)"><i class="bi-trash"></i></a></td>
+              </tr>
+              <tr class="border-bottom">
+                <td class="py-4">
+                  <input
+
+                    type="checkbox"
+                    name="list_name"
+                    value="103"
+                    class="ng-untouched ng-pristine ng-valid"
+                  />
+                </td>
+                <td class="py-4">103</td>
+                <td class="py-4">
+                 Incorporation.
+                </td>
+                <td class="py-4">
+                 Redirwed.
+                </td>
+                <td class="py-4">
+                 99
+                </td>
+                <td class="py-4">
+                  <!----><span
+
+                    class="badge bg-danger px-3 font-medium"
+                    >Pending</span
+                  ><!----><!---->
+                </td>
+                <td> <a class="text-info" routerLink="/component/viewinvoice"><i class="bi-eye"></i></a>&nbsp;&nbsp;
+                    <a class="text-danger" (click)="open(content)"><i class="bi-trash"></i></a></td>
+              </tr>
+              <tr class="border-bottom">
+                <td class="py-4">
+                  <input
+
+                    type="checkbox"
+                    name="list_name"
+                    value="104"
+                    class="ng-untouched ng-pristine ng-valid"
+                  />
+                </td>
+                <td class="py-4">104</td>
+                <td class="py-4">
+                 PineappleTimes .
+                </td>
+                <td class="py-4">
+                 RFc.
+                </td>
+                <td class="py-4">
+                 99
+                </td>
+                <td class="py-4">
+                  <span
+
+                    class="badge bg-info px-3 font-medium"
+                    >Shipped</span
+                  ><!----><!----><!---->
+                </td>
+                <td> <a class="text-info" routerLink="/component/viewinvoice"><i class="bi-eye"></i></a>&nbsp;&nbsp;
+                    <a class="text-danger" (click)="open(content)"><i class="bi-trash"></i></a></td>
+              </tr>
+
+              <!---->
+            </tbody>
+          </table>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-center">
+            <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h3 class="modal-title" id="modal-basic-title">Delete Model</h3>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="dateOfBirth">You Want To Delete This</label>
+
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">cancel</button>
+
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Delete</button>
+    </div>
+  </ng-template>

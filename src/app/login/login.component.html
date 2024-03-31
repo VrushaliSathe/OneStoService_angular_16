@@ -1,0 +1,210 @@
+<div class="authentication-inner row m-0">
+  <section
+    class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4"
+  >
+    <div class="container">
+      <div class="row justify-content-center">
+        <div
+          class="col-lg-6 col-md-3 d-flex flex-column align-items-left justify-content-left"
+        >
+          <img
+            src="assets\images\logos\auth-v2-login-illustration-light.png"
+            class="justify-content-between"
+          />
+        </div>
+
+        <div
+          class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center"
+        >
+          <!-- End Logo -->
+          <div class="card mb-3" style="padding-top: 0px">
+            <div class="card-body">
+              <div class="d-flex justify-content-center">
+                <a href="index.html" class="logo align-items-center w-auto">
+                  <img
+                    src="assets\images\logos\aclogo.png"
+                    alt=""
+                    style="height: 57px"
+                  />
+                  <span class="app-brand-text demo text-body fw-bold m-2"
+                    >AC Service</span
+                  >
+                </a>
+              </div>
+              <div class="pt-4 pb-2">
+                <h5 class="card-title text-center pb-0 fs-4">
+                  Login to Your Account
+                </h5>
+                <p class="text-center small">
+                  Enter your username & password to login
+                </p>
+              </div>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                    formControlName="email"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                    id="inputEmail4"
+                  />
+                  <div
+                    *ngIf="submitted && f.email.errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">
+                      Email must be a valid email address
+                    </div>
+                  </div>
+                  <label for="floatingInput">Email Or Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    formControlName="password"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                    id="inputPassword4"
+                  />
+                  <div
+                    *ngIf="submitted && f.password.errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f.password.errors.required">
+                      Password is required
+                    </div>
+                    <div *ngIf="f.password.errors.pattern">
+                      Password Pattern Is Requird
+                    </div>
+                  </div>
+
+                  <label for="floatingPassword">Password</label>
+                </div>
+<!-- checkbox -->
+                <!-- <div class="form-check mb-3">
+                  <input
+                    class="form-check-input"
+                    formControlName="acceptTerms"
+                    type="checkbox"
+                    value=""
+                    id="rememberPasswordCheck"
+                    class="form-check-input"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['acceptTerms'].errors
+                    }"
+                  />
+                  <label for="acceptTerms" class="form-check-label">
+                    Remember password</label
+                  >
+                </div> -->
+                <div class="d-grid">
+                  <button
+                    class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2"
+                    type="submit"
+                  >
+                    Sign in
+                  </button>
+                  <div class="text-center">
+                    <a class="small" routerLink="/forgotpass"
+                      >Forgot password?</a
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="credits">
+            Create Account <a routerLink="/register">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- /Login -->
+</div>
+<!-- <form>
+  <div class="row m-3">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        placeholder="title"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        name="description"
+        placeholder="description"
+      />
+    </div>
+  </div>
+  <div class="row m-3">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        name="price"
+        placeholder="price"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        name="discountPercentage"
+        placeholder="discountPercentage"
+      />
+    </div>
+  </div>
+  <div class="row m-3">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        name="rating"
+        placeholder="rating"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        name="brand"
+        placeholder="brand"
+      />
+    </div>
+  </div>
+  <div class="row m-3">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        name="category"
+        placeholder="category"
+      />
+    </div>
+    <div class="col">
+      <input
+        type="file"
+        class="form-control"
+        name="thumbnail"
+        placeholder="thumbnail"
+      />
+    </div>
+  </div>
+  <div class="row m-3">
+    <input type="file" class="form-control" />
+  </div>
+
+  <button class="btn btn-primary" (click)="getList()">get List</button>
+</form> -->
